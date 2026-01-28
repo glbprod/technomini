@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Exécute les checks locaux avant push
+bash scripts/prepush.sh --staged

@@ -8,7 +8,15 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "preview": "vite preview"
+    "test": "vitest",
+    "test:run": "vitest --run",
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "prepush:local": "bash ./scripts/prepush.sh --staged",
+    "release": "bash ./scripts/release.sh",
+    "update-deps": "bash ./scripts/deps-update.sh",
+    "backup": "bash ./scripts/backup-repo.sh",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "lucide-react": "^0.563.0",
@@ -17,7 +25,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@types/node": "^24.10.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types=node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.54.0",
@@ -28,9 +38,22 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "jsdom": "^27.4.0",
+    "lint-staged": "^16.2.7",
     "postcss": "^8.5.6",
+    "prettier": "^3.8.1",
     "tailwindcss": "^3.4.19",
     "typescript": "~5.9.3",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vitest": "^4.0.18",
+    "npm-check-updates": "^16.4.0",
+    "conventional-changelog-cli": "^4.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }
