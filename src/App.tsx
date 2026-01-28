@@ -57,6 +57,16 @@ export default function App() {
               Code Source
             </a>
           </div>
+
+          {/* Exemple Tailwind */}
+          <div className="mt-8 flex justify-center">
+            <div className="p-6 bg-gradient-to-r from-blue-50 to-white rounded-xl shadow-md">
+              <p className="text-sm text-slate-600 mb-2">Exemple d'utilisation de Tailwind :</p>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-lg font-medium">
+                <span className="font-mono text-xs">p-6 bg-blue-100 rounded-lg</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Feature Cards Preview */}
