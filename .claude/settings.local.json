@@ -7,7 +7,9 @@
       "Bash(npm run build:*)",
       "Bash(chmod:*)",
       "Bash(git checkout:*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
