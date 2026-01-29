@@ -1,0 +1,11 @@
+export { default as HomePage } from './HomePage';
+export { default as Conception3DPage } from './Conception3DPage';
+export { default as ReparabilitePage } from './ReparabilitePage';
+export { default as FlashcardsPage } from './FlashcardsPage';
+export { default as FichesPage } from './FichesPage';
+export { default as QuizPage } from './QuizPage';
+export { default as TinkercadPage } from './TinkercadPage';
+export { default as CorrectionsFichesPage } from './CorrectionsFichesPage';
+export { default as CorrectionsQuizPage } from './CorrectionsQuizPage';
+export { default as CorrectionsEvaluationsPage } from './CorrectionsEvaluationsPage';
+export { default as NotFoundPage } from './NotFoundPage';
