@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useAppStore } from '../../stores/useAppStore';
 import { navigation } from '../../data/content';
+import { IconRenderer } from '../ui';
 
 export function Header() {
   const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useAppStore();
@@ -20,7 +21,7 @@ export function Header() {
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             onClick={closeMobileMenu}
           >
-            <span className="text-2xl">⚙️</span>
+            <IconRenderer name="Settings" size={28} className="text-blue-600" />
             <span className="font-bold text-xl tracking-tight text-slate-900">
               Techno<span className="text-blue-600">Docs</span>
             </span>
@@ -34,7 +35,7 @@ export function Header() {
                 href={item.href}
                 className="flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors duration-200"
               >
-                <span>{item.icon}</span>
+                <IconRenderer name={item.icon} size={18} />
                 <span>{item.label}</span>
               </a>
             ))}
@@ -67,7 +68,7 @@ export function Header() {
                   onClick={handleNavClick}
                   className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all duration-200"
                 >
-                  <span className="text-xl">{item.icon}</span>
+                  <IconRenderer name={item.icon} size={20} />
                   <span className="font-medium">{item.label}</span>
                 </a>
               </li>

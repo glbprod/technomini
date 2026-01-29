@@ -3,7 +3,7 @@ export interface Cours {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: string; // Nom de l'icône Lucide (ex: "Box", "Plug")
   path: string;
 }
 
@@ -12,7 +12,7 @@ export interface Outil {
   id: string;
   name: string;
   tag: string;
-  icon: string;
+  icon: string; // Nom de l'icône Lucide (ex: "Code", "Bot")
   url: string;
   isExternal: boolean;
   logo?: string;
@@ -23,7 +23,7 @@ export interface Revision {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: string; // Nom de l'icône Lucide (ex: "SquareStack", "FileText")
   path: string;
   variant: 'flashcards' | 'fiches' | 'quiz';
 }
@@ -33,7 +33,7 @@ export interface Correction {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: string; // Nom de l'icône Lucide (ex: "ClipboardList", "BarChart3")
   path: string;
   variant: 'fiches' | 'quiz' | 'eval';
 }
@@ -41,6 +41,6 @@ export interface Correction {
 // Types pour la navigation
 export interface NavItem {
   label: string;
-  icon: string;
+  icon: string; // Nom de l'icône Lucide (ex: "BookOpen", "Wrench")
   href: string;
 }
