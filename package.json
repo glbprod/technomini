@@ -13,6 +13,7 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "prepush:local": "bash ./scripts/prepush.sh --staged",
+    "new-branch": "bash ./scripts/new-branch.sh",
     "release": "bash ./scripts/release.sh",
     "update-deps": "bash ./scripts/deps-update.sh",
     "backup": "bash ./scripts/backup-repo.sh",
