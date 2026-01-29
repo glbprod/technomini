@@ -39,10 +39,9 @@ Résumé des actions réalisées :
   - Ajouter des tests simples et des exemples d'utilisation Tailwind dans d'autres composants.
 
 Commandes utiles rappel :
+
 - `npm install` / `npm ci`
 - `npm run dev`
 - `npm run build`
 - `npm run lint`
 - `npm run lint:fix`
-
-Si tu veux, je peux committer ces fichiers et pousser les changements. Dis-moi si tu veux aussi que j'ajoute `vitest` et une job de test CI maintenant.»}]}]
