@@ -5,7 +5,12 @@
       "Bash(npx tsc:*)",
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(git checkout:*)",
+      "Bash(tree:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run lint:*)"
     ]
   }
 }

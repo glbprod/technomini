@@ -1,0 +1,10 @@
+node_modules/
+dist/
+public/
+backups/
+package-lock.json
+package.json
+*.md
+tsconfig*.json
+scripts/
+src/content/md/

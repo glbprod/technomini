@@ -5,7 +5,6 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
-// Extract type-checked rules so we can apply them only to TS files
 const tsTypeCheckedConfigs =
   tseslint.configs['flat/recommended-type-checked'] || [];
 const tsTypeCheckedRules =
@@ -17,11 +16,8 @@ const tsTypeCheckedRules =
 
 export default defineConfig([
   globalIgnores(['dist']),
-  // base JS recommended rules (flat config)
   js.configs.recommended,
-  // TypeScript plugin flat config (non-type-checked)
   tseslint.configs['flat/recommended'],
-  // Apply type-checked rules only to TS files
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -32,10 +28,8 @@ export default defineConfig([
     },
     rules: tsTypeCheckedRules,
   },
-  // React hooks and react-refresh plugin flat configs
   reactHooks.configs.flat.recommended,
   reactRefresh.configs.vite,
-  // Project-specific overrides (parserOptions for type-aware rules)
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -45,6 +39,34 @@ export default defineConfig([
       },
       ecmaVersion: 2020,
       globals: globals.browser,
+    },
+  },
+  // Override for config files and scripts (flat config: use languageOptions globals)
+  {
+    files: [
+      '*.config.js',
+      '*.config.cjs',
+      'tailwind.config.js',
+      'vite.config.*',
+      'scripts/**',
+    ],
+    languageOptions: {
+      globals: {
+        require: 'readonly',
+        module: 'readonly',
+        exports: 'readonly',
+        process: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+      },
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'script',
+      },
+    },
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+      'no-undef': 'off',
     },
   },
 ]);
