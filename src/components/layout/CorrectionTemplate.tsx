@@ -11,29 +11,31 @@ interface CorrectionTemplateProps {
 export default function CorrectionTemplate({
   title,
   htmlContent,
-  backLink = '/corrections',
-  backLabel = 'Retour aux corrections',
+  backLink = '/',
+  backLabel = "Retour à l'accueil",
 }: CorrectionTemplateProps) {
   return (
     <div className="min-h-screen bg-slate-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Navigation retour */}
+        {/* Bouton retour */}
         <Link
           to={backLink}
-          className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors mb-8 group"
         >
-          <ArrowLeft className="w-4 h-4" />
-          <span>{backLabel}</span>
+          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+          <span className="font-medium">{backLabel}</span>
         </Link>
 
-        {/* En-tête */}
-        <header className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900">{title}</h1>
+        {/* Titre principal */}
+        <header className="mb-10">
+          <h1 className="text-4xl font-bold text-slate-900 tracking-tight">
+            {title}
+          </h1>
         </header>
 
-        {/* Contenu HTML rendu avec Tailwind Typography */}
+        {/* Contenu Markdown avec Tailwind Typography */}
         <article
-          className="prose prose-slate max-w-none"
+          className="prose prose-slate lg:prose-xl max-w-none"
           dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
       </div>

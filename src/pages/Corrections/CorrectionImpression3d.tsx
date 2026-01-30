@@ -1,5 +1,5 @@
 import { html } from '../../content/md/corrections/correction-impression3d.md';
-import CorrectionTemplate from '../../components/layout/CorrectionTemplate';
+import { CorrectionTemplate } from '../../components/layout';
 
 export default function CorrectionImpression3D() {
   return (

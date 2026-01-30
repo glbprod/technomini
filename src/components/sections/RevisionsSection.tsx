@@ -1,24 +1,39 @@
 import { Link } from 'react-router-dom';
 import { GraduationCap } from 'lucide-react';
+import { FEATURES, type FeatureKey } from '../../config';
+
+interface RevisionItem {
+  title: string;
+  description: string;
+  path: string;
+  featureFlag: FeatureKey;
+}
+
+const allRevisions: RevisionItem[] = [
+  {
+    title: 'Flashcards',
+    description: 'Révisez avec des cartes mémo interactives',
+    path: '/revisions/flashcards',
+    featureFlag: 'flashcards',
+  },
+  {
+    title: 'Fiches de révision',
+    description: 'Consultez les synthèses de cours',
+    path: '/revisions/fiches',
+    featureFlag: 'fiches',
+  },
+  {
+    title: 'Quiz',
+    description: 'Testez vos connaissances',
+    path: '/revisions/quiz',
+    featureFlag: 'quiz',
+  },
+];
+
+const revisions = allRevisions.filter((r) => FEATURES[r.featureFlag]);
 
 export default function RevisionsSection() {
-  const revisions = [
-    {
-      title: 'Flashcards',
-      description: 'Révisez avec des cartes mémo interactives',
-      path: '/revisions/flashcards',
-    },
-    {
-      title: 'Fiches de révision',
-      description: 'Consultez les synthèses de cours',
-      path: '/revisions/fiches',
-    },
-    {
-      title: 'Quiz',
-      description: 'Testez vos connaissances',
-      path: '/revisions/quiz',
-    },
-  ];
+  if (revisions.length === 0) return null;
 
   return (
     <div>

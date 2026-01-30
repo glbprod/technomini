@@ -15,7 +15,18 @@ const tsTypeCheckedRules =
     : undefined) || {};
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores([
+    'node_modules/',
+    'dist/',
+    'public/',
+    'backups/',
+    'package-lock.json',
+    'package.json',
+    '*.md',
+    'tsconfig*.json',
+    'scripts/',
+    'src/content/md/',
+  ]),
   js.configs.recommended,
   tseslint.configs['flat/recommended'],
   {

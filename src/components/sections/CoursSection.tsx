@@ -1,19 +1,33 @@
 import { Link } from 'react-router-dom';
 import { BookOpen } from 'lucide-react';
+import { FEATURES, type FeatureKey } from '../../config';
+
+interface CoursItem {
+  title: string;
+  description: string;
+  path: string;
+  featureFlag: FeatureKey;
+}
+
+const allCours: CoursItem[] = [
+  {
+    title: 'Conception 3D',
+    description: 'Apprenez à modéliser en 3D avec Tinkercad',
+    path: '/cours/conception-3d',
+    featureFlag: 'coursConception3D',
+  },
+  {
+    title: 'Réparabilité',
+    description: 'Comprendre les enjeux de la réparation des objets',
+    path: '/cours/reparabilite',
+    featureFlag: 'coursReparabilite',
+  },
+];
+
+const cours = allCours.filter((c) => FEATURES[c.featureFlag]);
 
 export default function CoursSection() {
-  const cours = [
-    {
-      title: 'Conception 3D',
-      description: 'Apprenez à modéliser en 3D avec Tinkercad',
-      path: '/cours/conception-3d',
-    },
-    {
-      title: 'Réparabilité',
-      description: 'Comprendre les enjeux de la réparation des objets',
-      path: '/cours/reparabilite',
-    },
-  ];
+  if (cours.length === 0) return null;
 
   return (
     <div>
