@@ -3,7 +3,7 @@ export { default as HomePage } from './HomePage';
 export { default as NotFoundPage } from './NotFoundPage';
 
 // Cours
-export { default as Conception3DPage } from './Corrections/Conception3DPage';
+export { default as Conception3DPage } from './Cours/Conception3DPage';
 export { default as ReparabilitePage } from './Cours/ReparabilitePage';
 
 // Révisions

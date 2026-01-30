@@ -11,7 +11,6 @@ import {
   CorrectionsFichesPage,
   CorrectionsQuizPage,
   CorrectionsEvaluationsPage,
-  CorrectionImpression3DPage,
   NotFoundPage,
 } from './pages';
 
@@ -46,11 +45,6 @@ export default function App() {
             path="corrections/evaluations"
             element={<CorrectionsEvaluationsPage />}
           />
-          <Route
-            path="corrections/impression-3d"
-            element={<CorrectionImpression3DPage />}
-          />
-
           {/* 404 - Page non trouvée */}
           <Route path="*" element={<NotFoundPage />} />
         </Route>

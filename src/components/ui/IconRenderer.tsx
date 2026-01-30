@@ -15,6 +15,7 @@ import {
   HelpCircle,
   ClipboardList,
   BarChart3,
+  Printer,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -36,6 +37,7 @@ const iconMap: Record<string, LucideIcon> = {
   HelpCircle,
   ClipboardList,
   BarChart3,
+  Printer,
 };
 
 export interface IconRendererProps {

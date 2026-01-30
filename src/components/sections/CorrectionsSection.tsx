@@ -18,6 +18,11 @@ export default function CorrectionsSection() {
       description: 'Corrigés des contrôles',
       path: '/corrections/evaluations',
     },
+    {
+      title: 'Impression 3D',
+      description: 'Correction du cours Impression 3D',
+      path: '/corrections/impression-3d',
+    },
   ];
 
   return (
